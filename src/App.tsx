@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import logo from "./assets/logo-nlw-expert.svg";
+import { NoteCard } from "./components/note-card";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="mx-auto max-w-6xl my-12 space-y-6">
+      <img src={logo} alt="Logo" />
+      <form className="w-full">
+        {" "}
+        <input
+          type="text"
+          placeholder="Busque em suas notas ..."
+          className="w-full bg-transparent text-2xl font-semibold tracking-tight placeholder:text-slate-500  outline-none"
+        />
+      </form>
+      <div className="h-px bg-slate-700" />
 
-export default App
+      <div className="grid grid-cols-3 gap-6 auto-rows-[250px]">
+        <div className="rounded-md bg-slate-700 p-5 space-y-3 overflow-hidden relative">
+          <span className="text-sm font-medium text-slate-200">
+            Adicionar Nota
+          </span>
+          <p className="text-sm leading-6 text-slate-400">
+            Grave uma nota em áudio que será convertida em texto
+            automaticamente.
+          </p>{" "}
+        </div>
+        <NoteCard />
+        <NoteCard />
+      </div>
+    </div>
+  );
+}
