@@ -10,4 +10,5 @@ Library Radix UI
 ## Description
 
 Project powered by Rocketseat.
-It consists of written and spoken notes.
+It consists of notes that can be written or recorded.
+The SpeechRecognition API was used to transform the user's audio into notes.
